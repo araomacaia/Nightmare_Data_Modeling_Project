@@ -317,5 +317,17 @@ The Power BI file (`.pbix`) is not included in this repository, so everything ab
 **Arao Zau Macaia**
 Data Analyst who helps businesses make data-driven decisions.
 
-- GitHub: [github.com/araomacaia](https://github.com/araomacaia)
-- LinkedIn: [linkedin.com/in/araomacaia](https://www.linkedin.com/in/araomacaia/)
+
+<p align="left">
+  <a href="https://github.com/araomacaia" target="_blank">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" width="35" height="35"/>
+  </a>
+  &nbsp;
+  <a href="https://www.linkedin.com/in/araomacaia/" target="_blank">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" alt="LinkedIn" width="35" height="35"/>
+  </a>
+  &nbsp;
+  <a href="mailto:araomacaia718@gmail.com">
+    <img src="https://img.icons8.com/fluency/48/new-post.png" alt="Email" width="35" height="35"/>
+  </a>
+</p>
