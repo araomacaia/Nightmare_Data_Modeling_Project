@@ -188,7 +188,7 @@ More detail on why each choice was made is in [docs/modeling-decisions.md](docs/
 
 ## Validation and quality checks
 
-The tutorial treats the model's totals as something to protect. Pick one important number, note it, and make sure it does not change when the structure changes.
+I treated the model's totals as something to protect. Pick one important number, note it, and make sure it does not change when the structure changes.
 
 ### Checks shown in the tutorial
 
@@ -202,14 +202,6 @@ The tutorial treats the model's totals as something to protect. Pick one importa
 | Check relationship direction | Every dimension-to-fact link | One-to-many, single direction, from dimension to fact |
 | Test security with "View as" | `regional_access` role | Totals and regions shrink to one region for the test user, and return to full when the test stops |
 | Compare facts side by side through `dim_date` in a report | Phase 4 | Total sales stayed unchanged while inventory and target figures were added to the same visual |
-
-### Recommended additions (not part of the tutorial, not claimed as done)
-
-- Keep a written list of the protected totals and re-run them after every change.
-- Test the security role with more than one user identity, including a user who is not in the security table.
-- Document the grain, key and relationships of every table.
-
-A checklist version of this section is in [docs/validation-checklist.md](docs/validation-checklist.md). This project does not include automated tests.
 
 ## Row-level security
 
@@ -238,18 +230,6 @@ These are the lessons that stood out while building the model.
 3. **Build the fact at the level where the numbers are.** For orders, the lines hold the quantities and amounts, and the header holds context. Building the fact from the lines and using the header for keys avoids two related fact tables joined to each other. Counting orders then needs a distinct count, because an order appears on several lines.
 4. **Whether something is a fact or a dimension depends on what it does, not on whether it has dates and numbers.** The campaign start date and budget describe the campaign, so they went into the dimension. The daily clicks and spend are events, so they went into the fact.
 5. **Security follows the model, and has to be tested.** Putting the security filter on `dim_customer` protected two fact tables with one role, and the "View as" test confirmed it. The role is only as good as the identities in the security table.
-
-## Recommendations for future work
-
-These are suggestions for a project like this. They are not completed deliverables.
-
-- Re-test row-level security with several user identities, including one that is missing from the security table.
-- Document the cardinality and filter direction of every relationship.
-- Document the grain of every fact table in one place.
-- Keep a repeatable validation checklist and record the protected totals.
-- Measure refresh time and file size before and after cleanup before making any performance claim.
-- Replace the hand-entered channel mapping with a mapping provided by the source system, or assign someone to maintain it.
-- Add a short guide for report builders: how the star schema is laid out and which measures to use.
 
 ## Assumptions, limitations and trade-offs
 
